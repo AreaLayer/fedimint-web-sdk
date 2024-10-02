@@ -17,3 +17,17 @@ walletTest(
     await expect(wallet.mint.reissueExternalNotes('test')).rejects.toThrow()
   },
 )
+
+walletTest('parseNotes should parse notes', async ({ wallet }) => {
+  expect(wallet).toBeDefined()
+  expect(wallet.isOpen()).toBe(true)
+
+  await expect(wallet.mint.reissueExternalNotes('test')).rejects.toThrow()
+})
+
+walletTest('parseNotes should parse notes', async ({ wallet }) => {
+  expect(wallet).toBeDefined()
+  expect(wallet.isOpen()).toBe(true)
+
+  await expect(wallet.mint.reissueExternalNotes('test')).rejects.toThrow()
+})

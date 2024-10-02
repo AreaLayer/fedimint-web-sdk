@@ -77,7 +77,7 @@ export class MintService {
     }
   }
 
-  async validateNotes(oobNotes: string): Promise<number> {
+  async parseNotes(oobNotes: string): Promise<number> {
     return await this.client.rpcSingle('mint', 'validate_notes', {
       oob_notes: oobNotes,
     })

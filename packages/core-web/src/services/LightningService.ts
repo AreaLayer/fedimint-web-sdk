@@ -16,10 +16,10 @@ export class LightningService {
   async createInvoiceWithGateway(
     amount: number,
     description: string,
+    gatewayInfo: GatewayInfo,
     expiryTime: number | null = null,
     extraMeta: JSONObject = {},
-    gatewayInfo: GatewayInfo,
-  ) {
+  ): Promise<CreateBolt11Response> {
     return await this.client.rpcSingle('ln', 'create_bolt11_invoice', {
       amount,
       description,
@@ -120,7 +120,7 @@ export class LightningService {
       setTimeout(() => {
         unsubscribe()
         reject(new Error('Timeout waiting for receive'))
-      }, 10000)
+      }, 15000)
     })
   }
 
